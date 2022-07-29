@@ -1,6 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			personaje:[],
+			personajes:[],
+			planets:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -15,6 +18,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+
+		// function personajes de starwar
+		getPlanets:()=>{
+			fetch("https://www.swapi.tech/api/planets/")
+			.then(response=> response.json())
+			.then(result => setStore({planets:result.results}))
+			.catch(error=> console.log("DANGER",error))
+		},
+
+
+		getPersonajes:()=>{
+			fetch("https://www.swapi.tech/api/people/")
+			.then(response => response.json())
+			.then(result => setStore({personajes:result.results}))
+			.catch(error => console.log("DANGER",error))
+
+		},
+		getPersonaje:(id)=>{
+			fetch("https://www.swapi.tech/api/people/" + id )
+			.then(response => response.json())
+			.then(result => setStore({personaje:result.result}))
+			.catch(error => console.log("DANGER",error))
+		},
+
+
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

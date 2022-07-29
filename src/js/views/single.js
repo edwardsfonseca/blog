@@ -7,8 +7,12 @@ export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
+		
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
+			{store.personajes.map((e,i)=>{
+			return<h1 className="display-4">This will show the demo element: {e.name}</h1>
+		})},
+			
 
 			<hr className="my-4" />
 

@@ -6,7 +6,7 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
-
+import { People } from "./views/people";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -31,6 +31,11 @@ const Layout = () => {
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
+						
+						<Route exact path="/people/:id">
+							<People />
+						</Route>
+						
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
