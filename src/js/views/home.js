@@ -13,15 +13,15 @@ export const Home = () => {
 			{store.personajes.map((e, i) => {
 				console.log(e)
 				return <div className="container" style={{ "width": "18rem" }}>
-					<img className="card-img-top" src="http://lespetitespensees.com/wp-content/uploads/2013.bak/10/500x500.gif" alt="Card image cap" />
+					<img className="card-img-top" src={store.imagen[i]} alt="Card image cap" />
 					<div className="card-body" key={i}>
 						<h5 className="card-title">{e.name}</h5>
-						<p>Nombre:&nbsp;{e.descriptionr}</p>
+						<p>Nombre:&nbsp;{e.description}</p>
 						
 						<Link to={"/people/" + e.uid}>
 							<button type="button" class="btn btn-outline-primary">Learn More !</button>
-							<button type="button" class="btn btn-outline-warning m-2"> <i class="far fa-heart"></i></button>
 						</Link>
+							<button onClick={()=> actions.getAddTask(e.name)} type="button" class="btn btn-outline-warning m-2"> <i class="far fa-heart"></i></button>
 
 					</div>
 				</div>
@@ -31,7 +31,7 @@ export const Home = () => {
 				{store.planetas.map((e, i) => {
 					console.log(e)
 					return <div className="card-body" style={{ "width": "18rem" }}>
-						<img className="card-img-top" src="http://lespetitespensees.com/wp-content/uploads/2013.bak/10/500x500.gif" alt="Card image cap" />
+						<img className="card-img-top" src={store.imagenplaneta[i]} />
 						<div className="card-body" key={i}>
 							<h5 className="card-title">{e.name}</h5>
 							<p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

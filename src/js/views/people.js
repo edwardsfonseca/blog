@@ -12,7 +12,7 @@ export const People = () => {
         console.log(store.personaje)
     }, []);
 
-    return <>
+    return <><div>
         <h1>{store.personaje.description}</h1>
 
         <p>Nombre:&nbsp;{store.personaje.properties?.name}</p>
@@ -26,8 +26,8 @@ export const People = () => {
         <p>Creado: &nbsp;{store.personaje.properties?.created}</p>
         <p>Mundo Natal :&nbsp;{store.personaje.properties?.homeworld}</p>
         <p>URL:&nbsp;{store.personaje.properties?.url}</p>
-
-
+        <img className="card-img-top" src={store.imagen[i]} alt="Card image cap" />
+        </div>
 
 
 
