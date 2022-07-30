@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			personaje:[],
 			personajes:[],
-			planets:[],
+			planetas:[],
+			planeta:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -19,11 +20,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 
-		// function personajes de starwar
-		getPlanets:()=>{
+		getPlaneta:(id)=>{
+			fetch("https://www.swapi.tech/api/planets/" + id)
+			.then(response=> response.json())
+			.then(result => setStore({planeta:result.result}))
+			.catch(error=> console.log("DANGER",error))
+		},
+
+		getPlanetas:()=>{
 			fetch("https://www.swapi.tech/api/planets/")
 			.then(response=> response.json())
-			.then(result => setStore({planets:result.results}))
+			.then(result => setStore({planetas:result.results}))
 			.catch(error=> console.log("DANGER",error))
 		},
 

@@ -8,6 +8,7 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { People } from "./views/people";
 import { Navbar } from "./component/navbar";
+import { Planeta } from "./views/planeta";
 import { Footer } from "./component/footer";
 
 //create your first component
@@ -34,6 +35,9 @@ const Layout = () => {
 						
 						<Route exact path="/people/:id">
 							<People />
+						</Route>
+						<Route exact path="/planeta/:id">
+							<Planeta />
 						</Route>
 						
 						<Route>
