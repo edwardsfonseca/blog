@@ -20,8 +20,8 @@ export const Planeta = () =>{
    <p>Periodo Orbital:&nbsp;{store.planeta.properties?.orbital_period}</p>
    <p>Gravedad:&nbsp;{store.planeta.properties?.gravity}</p>
    <p>Población:&nbsp;{store.planeta.properties?.population}</p>
-   <p>Clima:&nbsp;{store.planeta.properties?.climate}</p>
    <p>Terreno:&nbsp;{store.planeta.properties?.terrain}</p>
+   <p>Clima:&nbsp;{store.planeta.properties?.climate}</p>
    <p>Agua Superficial:&nbsp;{store.planeta.properties?.surface_water}</p>
    <p>Creado:&nbsp;{store.planeta.properties?.created}</p>
    <p>Editado:&nbsp;{store.planeta.properties?.edited}</p>
