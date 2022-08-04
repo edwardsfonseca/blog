@@ -6,6 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			personajes: [], // arreglo para ver los personajes
 			planetas: [], // arreglo para ver los planetas
 			planeta: [], // arreglo para ver los detalles del planeta
+			personajesF:[],
 
 
 			// imagenes de los personajes
@@ -74,6 +75,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			getHandleChange:(e) => {
+				const store= getStore();
+				setStore({personajesF:store.personajes.filter((persona)=>{
+					return persona.name.includes(e.target.value);
+				})}
+				)
+				
+			},
+			
+
+			//funcion buscar
+			getBuscar:(id)=>{
+				fetch("https://www.swapi.tech/api/people/"+id)
+				.then(response => response.json())
+				.then(result => setStore({ buscador: result.results }))
+				.catch(error => console.log("DANGER", error))
+
+			},
+
+
 			//funcion borrar
 			getBorrar:(id)=>{
 				const store= getStore();
