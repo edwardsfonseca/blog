@@ -10,12 +10,12 @@ export const Home = () => {
 	return (
 		/* Personajes */
 		<div className="row">
-			{/* <hr style={{"background":"#5e5e7c" ,"width": "-webkit-fill-available","height":"3px"}}></hr> */}
-			<h1 style={{ "display": "flex", "color": "rgb(188 191 40)", "padding": "20px" }}>Characters</h1>
-			<div className="caja" >
+			<hr style={{"background":"#5e5e7c" ,"width": "-webkit-fill-available","height":"3px"}}></hr>
+				<h1 style={{ "display": "flex", "color": "rgb(188 191 40)", "padding": "20px" }}>People</h1>
+			
 			{store.personajes.map((e, i) => {
 				
-				return <div className="container" style={{ "width": "1000px" ,"height":"450px"}}>
+				return <div className="container" style={{ "width": "18rem"}}>
 					<img className="card-img-top" src={store.imagen[i]} alt="Card image cap" />
 					<div className="card-body" key={i}>
 						<h5 className="card-title">{e.name}</h5>
@@ -29,11 +29,8 @@ export const Home = () => {
 					</div>
 					{/* <hr style={{"background":"#5e5e7c" ,"width": "-webkit-fill-available","height":"3px"}}></hr> */}
 				</div>
-			})}
-			</div>
-			
-			{/* Planetas  */}
-			
+			})}						
+			{/* Planetas  */}			
 			<div className="row">
 			<hr style={{"background":"#5e5e7c" ,"width": "-webkit-fill-available","height":"3px"}}></hr>
 				<h1 style={{ "display": "flex", "color": "rgb(188 191 40)", "padding": "20px" }}>Planets</h1>
